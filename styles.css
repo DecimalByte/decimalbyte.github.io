@@ -7,6 +7,8 @@ html {
     #38598b 80%, 
     #113f67 100%
   );
+    font-family: 'Courier New', Courier, monospace;  
+    font-weight: bold;
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
@@ -22,7 +24,42 @@ html {
 #intro {
     font-family: 'Courier New', Courier, monospace;
     padding: 50px;
+    padding-top: 20px;
 }
+
+.navigation_bar {
+    padding-right: 45px;
+    padding-top: 10px;
+   
+}
+
+#navigation_list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+#navigation_list li {
+    padding: 20px;
+    text-decoration: none;
+    color: rgb(93, 14, 93);;
+}
+
+#navigation_list li a:hover {
+    color: rgb(93, 14, 93);
+    text-decoration: none;
+}
+
+#navigation_list li a {
+    color: rgb(93, 14, 93);
+    text-decoration: none;
+}
+
+#navigation_list li a:active, a:visited {
+    color: rgb(93, 14, 93);
+    text-decoration: none;
+}
+
 
 
 @keyframes float {
