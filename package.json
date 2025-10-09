@@ -1,1 +1,5 @@
-
+{
+  "name" = "Portfolio",
+  "version" = "1.0",
+  "type" = "module"
+}
