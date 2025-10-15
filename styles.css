@@ -1,0 +1,173 @@
+html {
+    height: 100%;
+}
+
+body{
+    background-color: #e7e5fc;
+    font-family: "Poppins";  
+    font-weight: bold;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.navigation_bar {
+    background-color: black;
+    background: black;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#navigation_list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+#navigation_list li {
+    padding: 20px;
+    text-decoration: none;
+    color: #f7f5f2;
+}
+
+#navigation_list li a:hover {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+#navigation_list li a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+#navigation_list li a:active, a:visited {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.content {
+    margin-left: 18%;
+    position: relative;
+}
+
+#title {
+    animation: float 5s ease-in-out infinite;
+    font-family: 'Poppins';
+
+    margin-top: 100px;
+    padding-left: 18px;
+    padding-bottom: 18px;
+    margin-left: 29px;
+    position: relative;
+}
+
+#title h1 {
+    font-size: 45px;
+}
+
+#title h3 {
+    font-size: 20px;
+    text-align: center;
+    position: static;
+
+}
+
+
+#intro {
+    font-family: "Poppins";
+    font-weight: 500;
+    background-color: #f7f5f2;
+    border-radius: 10px;
+
+    font-size: 15px;
+    word-spacing: 2px;
+    padding: 50px;
+    padding-top: 5px;
+    margin-right: 20%;
+    margin-bottom: 50px;
+
+    position: relative;
+}
+
+#intro span {
+    color: rgb(19, 23, 255);
+}
+
+
+@property --angle {
+    syntax:  "<angle>";
+    initial-value:  0deg;
+    inherits: false;
+}
+
+#intro::after, #intro::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), rgb(125, 125, 255), rgb(196, 196, 255), rgb(125, 125, 255));
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    padding-top: 5px;
+    padding-right: 5px;
+    border-radius: 12px;
+    animation: 7s spin linear infinite;
+
+}
+
+#intro::before {
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+#intro p {
+    overflow: auto;
+}
+
+footer {
+    background-color: black;
+    color: #f7f5f2;
+
+    display: flex;
+    justify-content: center;
+
+    margin-top: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
+
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+}
+
+
+
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+    to {
+        --angle: 360deg;
+    }
+}
+
