@@ -3,12 +3,8 @@ html {
 }
 
 body{
-    background-color: #e7e5fc;
     font-family: "Poppins";  
     font-weight: bold;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     min-height: 100%;
     width: 100%;
     margin: 0;
@@ -17,6 +13,19 @@ body{
     flex-direction: column;
 
 }
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: -5%;
+    background-image: url("../images/wave.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    animation: float 30s ease-in-out infinite;
+}
+
 
 .navigation_bar {
     background-color: black;
@@ -55,6 +64,30 @@ body{
     text-decoration: none;
 }
 
+.window-buttons {
+    transform: translate(-25px, 8px);
+    display: flex;
+    gap: 8px;
+}
+
+.btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.close {
+    background: #ff5f57;
+}
+
+.minimize {
+    background: #febc2e;
+}
+
+.maximize {
+    background: #28c840;
+}
+
 .content {
     margin-left: 18%;
     position: relative;
@@ -71,8 +104,8 @@ body{
 
 
 #title {
-    animation: float 4s ease-in-out infinite;
     font-family: 'Poppins';
+    color: #f7f5f2;
 
     margin-top: 100px;
     padding-left: 18px;
@@ -142,7 +175,7 @@ body{
     position: absolute;
     height: 100%;
     width: 100%;
-    background-image: conic-gradient(from var(--angle), rgb(125, 125, 255), rgb(196, 196, 255), rgb(125, 125, 255));
+    background-image: conic-gradient(from var(--angle), rgb(255, 255, 255), rgb(95, 165, 218), rgb(255, 255, 255));
     top: 50%;
     left: 50%;
     translate: -50% -50%;
@@ -176,7 +209,6 @@ body{
 }
 
 
-
 footer {
     background-color: black;
     color: #f7f5f2;
@@ -190,16 +222,52 @@ footer {
 
 }
 
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
+@media (max-width: 600px) {
+    body {
+        width: 100%;
+        min-height: 100vh;
     }
-    50% {
-        transform: translateY(20px);
+
+    .navigation_bar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    #title {
+    margin-left: -5px;
     }
 }
 
+@keyframes float {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    16% {
+        transform: translate(-2%, 1%) rotate(0.5deg);
+    }
+
+    33% {
+        transform: translate(1%, -2%) rotate(-0.5deg);
+    }
+
+    50% {
+        transform: translate(2%, 1%) rotate(0.3deg);
+    }
+
+    66% {
+        transform: translate(-1%, -1%) rotate(-0.3deg);
+    }
+
+    83% {
+        transform: translate(-2%, 0.5%) rotate(0.4deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
 
 
 @keyframes spin {
